@@ -7,12 +7,6 @@ terraform {
   }
 }
 
-provider "aws" {
-    region     = "us-east-1"
-    access_key = "AKIAWFRKU3R7BNIABVJB"
-    secret_key = "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"
-}
-
 resource "tls_private_key" "rsa_4096" {
   algorithm = "RSA"
   rsa_bits  = 4096
@@ -30,11 +24,6 @@ resource "local_file" "private_key" {
     filename = var.key_name
 }
 
-resource "aws_instance" "public_instance" {
-  ami           = "ami-04a81a99f5ec58529"
-  instance_type = "t2.micro"
-  key_name = aws_key_pair.key_pair.key_name
-  tags = {
-    Name = "public_instance"
-  }
+resource "aws_s3_bucket" "mybucket" {
+  bucket = "super-aws-bucket-for-test-321"
 }
