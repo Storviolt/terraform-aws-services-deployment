@@ -1,0 +1,20 @@
+# Ignore Terraform working directories and state files in all subdirectories
+terraform/**/.terraform/
+terraform/**/.terraform.lock.hcl
+terraform/**/terraform.tfstate
+terraform/**/terraform.tfstate.backup
+
+# Ignore Terraform variable files (optional)
+terraform/**/*.tfvars
+terraform/**/*.tfvars.json
+
+# IDEs and editors
+*.swp
+*.swo
+*.DS_Store
+*.vscode/
+*.idea/
+*.iml
+
+# Local environment files
+.env
