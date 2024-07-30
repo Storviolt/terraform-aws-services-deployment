@@ -1,12 +1,12 @@
-# Ignore Terraform working directories and state files in all subdirectories
-terraform/**/.terraform/
-terraform/**/.terraform.lock.hcl
-terraform/**/terraform.tfstate
-terraform/**/terraform.tfstate.backup
+# Ignore Terraform trash files in the 'main' directory
+main/.terraform/
+main/.terraform.lock.hcl
+main/terraform.tfstate
+main/terraform.tfstate.backup
 
-# Ignore Terraform variable files (optional)
-terraform/**/*.tfvars
-terraform/**/*.tfvars.json
+
+# Ignore Terraform variable files
+main/*.tfvars
 
 # IDEs and editors
 *.swp
