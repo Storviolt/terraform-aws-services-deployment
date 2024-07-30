@@ -70,3 +70,10 @@ variable "file_source" {
   description = "The source file path for the S3 object"
   type        = string
 }
+
+# elb.tf
+#
+variable "elb_name" {
+  description = "The name of the ELB"
+  type        = string
+}
