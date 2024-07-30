@@ -9,11 +9,11 @@ resource "aws_instance" "first" {
     apt-get install -y apache2
     systemctl start apache2
     systemctl enable apache2
-    echo "THIS IS FIRST WEB SERVER" > /var/www/html/index.html
+    echo "${var.first_instance_html_content}" > /var/www/html/index.html
   EOF
 
   tags = {
-    Name   = "First_web_server"
+    Name   = var.first_instance_name
     source = "terraform"
   }
 }
@@ -29,11 +29,11 @@ resource "aws_instance" "second" {
     apt-get install -y apache2
     systemctl start apache2
     systemctl enable apache2
-    echo "THIS IS SECOND WEB SERVER" > /var/www/html/index.html
+    echo "${var.second_instance_html_content}" > /var/www/html/index.html
   EOF
 
   tags = {
-    Name   = "Second_web_server"
+    Name   = var.second_instance_name
     source = "terraform"
   }
 }

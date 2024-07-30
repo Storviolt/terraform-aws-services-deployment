@@ -12,10 +12,6 @@ resource "tls_private_key" "rsa_4096" {
   rsa_bits  = 4096
 }
 
-variable "key_name" {
-  default = "my_key"
-}
-
 resource "aws_key_pair" "key_pair" {
   key_name   = var.key_name
   public_key = tls_private_key.rsa_4096.public_key_openssh
