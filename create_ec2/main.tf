@@ -12,7 +12,9 @@ resource "tls_private_key" "rsa_4096" {
   rsa_bits  = 4096
 }
 
-variable "key_name" {}
+variable "key_name" {
+  default = "my_key"
+}
 
 resource "aws_key_pair" "key_pair" {
   key_name   = var.key_name
@@ -21,9 +23,5 @@ resource "aws_key_pair" "key_pair" {
 
 resource "local_file" "private_key" {
     content = tls_private_key.rsa_4096.private_key_pem
-    filename = var.key_name
-}
-
-resource "aws_s3_bucket" "mybucket" {
-  bucket = "super-aws-bucket-for-test-321"
+    filename = "${var.key_name}.pem"
 }
