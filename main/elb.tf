@@ -21,6 +21,6 @@ resource "aws_elb" "my-elb" {
     cross_zone_load_balancing = true
     idle_timeout              = 40
     tags = {
-        Name = "my-elb"
+        Name = var.elb_name
     }
 }

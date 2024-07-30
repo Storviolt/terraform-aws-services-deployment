@@ -4,6 +4,6 @@ resource "aws_s3_bucket" "mybucket" {
 
 resource "aws_s3_object" "myfile" {
   bucket = aws_s3_bucket.mybucket.id
-  key    = "myfile.txt"
-  source = "~/Downloads/my_file.txt"
+  key    = var.file_key
+  source = var.file_source
 }
