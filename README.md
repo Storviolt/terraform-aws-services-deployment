@@ -5,31 +5,39 @@
 This repository contains Terraform configurations for provisioning AWS resources.  
 The project is organized into two main directories:
 
-- **'main/'**: Contains the primary Terraform configuration files.
-- **'excluded/'**: Contains files that are excluded from the main execution.
+- **main**: Contains the primary Terraform configuration files.
+- **excluded**: Contains files that are excluded from the main execution.
 
-Additionally, there are '.tf' files for configuring various AWS services.  
-- **'provider.tf'**: Contains configuration for the AWS provider.  
+Additionally, there are '.tf' files for configuring various AWS services:  
+- **provider.tf**: Contains configuration for the AWS provider.  
 
-- **'ec2.tf'**: Configures AWS EC2 instances.  
+- **ec2.tf**: Configures AWS EC2 instances.  
 
-- **'elb.tf'**: Configures AWS Elastic Load Balancer (ELB).  
+- **elb.tf**: Configures AWS Elastic Load Balancer (ELB).  
 
-- **'rds.tf'**: Configures AWS RDS (Relational Database Service) instances.  
+- **rds.tf**: Configures AWS RDS (Relational Database Service) instances.  
 
-- **'s3.tf'**: Configures AWS S3 buckets and objects.  
+- **s3.tf**: Configures AWS S3 buckets and objects.  
 
-- **'sg.tf'**: Configures AWS Security Groups.  
+- **sg.tf**: Configures AWS Security Groups.  
+
+Other '.tf' files:  
+- **output.tf**: Defines variables to display with the `terraform output` command.  
+
+- **variables.tf**: Declares all required variables.  
+
+- **terraform.tfvars.example**: Example file to copy and edit for setting variable values.  
 
 ## Configuration  
 
-### Create terraform.tfvars  
+### Create terraform.tfvars
 
-"terraform.tfvars.example" provides example values for variables.  
-Copy this file to terraform.tfvars and edit the values as needed:
+The `terraform.tfvars.example` file contains example values for variables.  
+Copy this file to `terraform.tfvars` and edit it with your specific values:
 
-"cp terraform.tfvars.example terraform.tfvars"
-
+```sh
+cp main/terraform.tfvars.example main/terraform.tfvars
+```
 ### AWS Credentials:  
 
 Create a new access key for your AWS user if you haven't already.  
@@ -62,7 +70,13 @@ These rules can be modified in the **sg.tf** file.
 
 - **Move to 'main' directory**
 - **Use the following Terraform commands:**  
-    - *terraform init*  
-    - *terraform validate (optional)*  
-    - *terraform plan*  
-    - *terraform apply*  
+    - `terraform init`    : Initialize the configuration  
+    - `terraform plan`    : Preview changes before applying  
+    - `terraform apply`   : Apply the changes to reach the desired state
+
+## Other Useful Terraform Commands
+    - terraform destroy    : Delete all managed resources
+    - terraform validate   : Validate configuration files
+    - terraform state list : List all resources in the state file
+    - terraform output     : Show outputs from the Terraform state
+    - terraform refresh    : Update the state with real infrastructure
