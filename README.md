@@ -40,6 +40,24 @@ Add the access key and secret key to the terraform.tfvars file for the provider 
 - Under the "Security credentials" tab, create a new access key and secret key.  
 - Update your terraform.tfvars file with these credentials.  
 
+### Security Group - Rules
+
+These rules can be modified in the **sg.tf** file.
+
+#### Inbound Rules (ingress)  
+
+| IP Version | Traffic Type | Protocol | Port Range | Source       |
+|------------|--------------|----------|------------|--------------|
+| IPv4       | HTTP         | TCP      | 80         | 0.0.0.0/0    |
+| IPv4       | SSH          | TCP      | 22         | 0.0.0.0/0    |
+
+#### Outbound Rules (egress)  
+
+| IP Version | Traffic Type | Protocol | Port Range | Destination  |
+|------------|--------------|----------|------------|--------------|
+| IPv4       | All Traffic  | All      | All        | 0.0.0.0/0    |
+
+
 ## How to use
 
 - **Move to 'main' directory**
