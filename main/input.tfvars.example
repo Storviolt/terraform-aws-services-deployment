@@ -1,6 +1,6 @@
 #
 # This file provides example values for the variables required by your Terraform configuration.
-# Copy this file and rename it to 'terraform.tfvars'.
+# Copy this file and rename it to 'input.tfvars'.
 # Then, replace the example values with your actual configuration values.
 #
 

@@ -26,17 +26,17 @@ Other '.tf' files:
 
 - **variables.tf**: Declares all required variables.  
 
-- **terraform.tfvars.example**: Example file to copy and edit for setting variable values.  
+- **input.tfvars.example**: Example file to copy and edit for setting variable values.  
 
 ## Configuration  
 
-### Create terraform.tfvars
+### Create input.tfvars
 
-The `terraform.tfvars.example` file contains example values for variables.  
-Copy this file to `terraform.tfvars` and edit it with your specific values:
+The `input.tfvars.example` file contains example values for variables.  
+Copy this file to `input.tfvars` and edit it with your specific values:
 
 ```sh
-cp main/terraform.tfvars.example main/terraform.tfvars
+cp main/input.tfvars.example main/input.tfvars
 ```
 ### AWS Credentials:  
 
