@@ -1,3 +1,4 @@
+/*
 output "ec2_instance_first" {
   description = "Details of the first EC2 instance"
   value = {
@@ -71,3 +72,4 @@ output "security_group" {
     ]
   }
 }
+*/

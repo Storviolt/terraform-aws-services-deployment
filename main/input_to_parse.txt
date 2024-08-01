@@ -1,0 +1,9 @@
+# ec2:name:ami:instance_type:html_content
+# s3:name
+# elb:name:first_instance,second_instance,...,last_instance
+ec2:vm1:ami-04a81a99f5ec58529:t2.micro:THIS IS FIRST WEB SERVER
+ec2:vm2:ami-04a81a99f5ec58529:t2.micro:THIS IS SECOND WEB SERVER
+s3:superbucket1
+s3:superbucket2
+elb:SuperELB1:vm1,vm2
+elb:SuperELB2:vm1,vm2
