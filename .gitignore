@@ -6,6 +6,7 @@
 **/*.pem
 
 # Ignore Terraform variable files
+**/*.json
 **/*.tfvars
 **/*.tfvars.json
 
