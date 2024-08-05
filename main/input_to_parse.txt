@@ -3,7 +3,10 @@
 # elb:name:first_instance,second_instance,...,last_instance
 ec2:vm1:ami-04a81a99f5ec58529:t2.micro:THIS IS FIRST WEB SERVER
 ec2:vm2:ami-04a81a99f5ec58529:t2.micro:THIS IS SECOND WEB SERVER
-s3:superbucket1
-s3:superbucket2
+s3:super-extra-bucket-unique1
+s3:super-extra-bucket-unique2
 elb:SuperELB1:vm1,vm2
 elb:SuperELB2:vm1,vm2
+ec2:vm3:ami-04a81a99f5ec58529:t2.micro:THIS IS THIRD WEB SERVER
+elb:SuperELB3:vm2,vm3
+s3:super-extra-bucket-unique3

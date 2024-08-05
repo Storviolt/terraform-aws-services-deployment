@@ -22,7 +22,7 @@ variable "aws_secret_key" {
   sensitive   = true
 }
 
-
+/*
 # rds.tf
 #
 variable "db_username" {
@@ -34,7 +34,7 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
-
+*/
 
 # ec2.tf
 #
@@ -64,4 +64,9 @@ variable "elbs" {
     name      = string
     instances = list(string)
   }))
+}
+variable "availability_zones" {
+  description = "List of availability zones to use"
+  type        = list(string)
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }

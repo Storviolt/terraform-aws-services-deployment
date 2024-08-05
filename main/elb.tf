@@ -1,7 +1,7 @@
 resource "aws_elb" "elb" {
   for_each             = { for elb in var.elbs : elb.name => elb }
   name                 = each.value.name
-  availability_zones   = ["us-east-1c"]
+  availability_zones   = var.availability_zones
 
   listener {
     instance_port     = 80
