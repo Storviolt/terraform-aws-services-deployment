@@ -1,10 +1,8 @@
 import json
 
-# Chemin vers le fichier d'entrée
 input_file_path = "input_to_parse.txt"
 output_file_path = "terraform.tfvars.json"
 
-# Fonction pour lire et parser le fichier d'entrée
 def parse_input_file(file_path):
     resources = {
         "ec2_instances": [],
@@ -36,15 +34,11 @@ def parse_input_file(file_path):
 
     return resources
 
-# Fonction pour générer le fichier JSON
 def generate_json(resources, output_file_path):
     with open(output_file_path, 'w') as file:
         json.dump(resources, file, indent=4)
 
-# Parse le fichier d'entrée
 resources = parse_input_file(input_file_path)
-
-# Génére le fichier JSON
 generate_json(resources, output_file_path)
 
 print(f"JSON configuration generated in {output_file_path}")
