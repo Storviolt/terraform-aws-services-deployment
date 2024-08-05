@@ -21,23 +21,21 @@ Additionally, there are '.tf' files for configuring various AWS services:
 
 - **sg.tf**: Configures AWS Security Groups.  
 
-Other '.tf' files:  
+Other files:  
 - **output.tf**: Defines variables to display with the `terraform output` command.  
 
 - **variables.tf**: Declares all required variables.  
+ 
+- **input_to_parse.txt**: File to parse.  
 
-- **terraform.tfvars.example**: Example file to copy and edit for setting variable values.  
+- **parse_input.py**: Python parser script.  
 
 ## Configuration  
 
-### Create terraform.tfvars
+### Install Terraform
 
-The `terraform.tfvars.example` file contains example values for variables.  
-Copy this file to `terraform.tfvars` and edit it with your specific values:
+Follow the steps outlined on the [Terraform documentation site](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) to install Terraform.  
 
-```sh
-cp main/terraform.tfvars.example main/terraform.tfvars
-```
 ### AWS Credentials:  
 
 Create a new access key for your AWS user if you haven't already.  
@@ -69,6 +67,11 @@ These rules can be modified in the **sg.tf** file.
 ## How to use
 
 - **Move to 'main' directory**
+
+```sh
+cd main
+```  
+
 - **Use the following Terraform commands:**  
     - `terraform init`    : Initialize the configuration  
     - `terraform plan`    : Preview changes before applying  

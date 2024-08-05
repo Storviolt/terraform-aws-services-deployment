@@ -1,9 +1,5 @@
-resource "aws_s3_bucket" "mybucket" {
-  bucket = "super-aws-bucket-for-test-321"
-}
+resource "aws_s3_bucket" "bucket" {
+  for_each = { for bucket in var.s3_buckets : bucket.name => bucket }
 
-resource "aws_s3_object" "myfile" {
-  bucket = aws_s3_bucket.mybucket.id
-  key    = var.file_key
-  source = var.file_source
+  bucket = each.value.name
 }

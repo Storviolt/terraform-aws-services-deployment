@@ -22,7 +22,7 @@ variable "aws_secret_key" {
   sensitive   = true
 }
 
-
+/*
 # rds.tf
 #
 variable "db_username" {
@@ -34,46 +34,39 @@ variable "db_password" {
   type        = string
   sensitive   = true
 }
-
+*/
 
 # ec2.tf
 #
-variable "first_instance_name" {
-  description = "The name for the first EC2 instance"
-  type        = string
-}
-variable "second_instance_name" {
-  description = "The name for the second EC2 instance"
-  type        = string
-}
-variable "first_instance_html_content" {
-  description = "The HTML content for the first EC2 instance"
-  type        = string
-}
-variable "second_instance_html_content" {
-  description = "The HTML content for the second EC2 instance"
-  type        = string
+variable "ec2_instances" {
+  type = list(object({
+    name           = string
+    ami            = string
+    instance_type  = string
+    html_content   = string
+  }))
 }
 
 
 # s3.tf
 #
-variable "bucket_name" {
-  description = "The name of the S3 bucket"
-  type        = string
-}
-variable "file_key" {
-  description = "The key for the S3 object"
-  type        = string
-}
-variable "file_source" {
-  description = "The source file path for the S3 object"
-  type        = string
+variable "s3_buckets" {
+  description = "List of S3 buckets to create"
+  type        = list(object({
+    name = string
+  }))
 }
 
 # elb.tf
 #
-variable "elb_name" {
-  description = "The name of the ELB"
-  type        = string
+variable "elbs" {
+  type = list(object({
+    name      = string
+    instances = list(string)
+  }))
+}
+variable "availability_zones" {
+  description = "List of availability zones to use"
+  type        = list(string)
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
